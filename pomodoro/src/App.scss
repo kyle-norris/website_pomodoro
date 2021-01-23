@@ -11,7 +11,7 @@ h1 {
   font-weight: bold;
   font-style: normal;
   font-size: 100px;
-  line-height: 120px;
+  line-height: 101px;
   letter-spacing: -5px;
   color: $lightblue;
 }
@@ -28,7 +28,7 @@ h3 {
   font-weight: bold;
   font-style: normal;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 16px;
   letter-spacing: 15px;
   color: $lightblue;
   text-transform: uppercase;
@@ -48,4 +48,6 @@ h4 {
   background: $darkblue;
   height: 100vh;
   width: 100vw;
+  display: flex;
+  justify-content: center;
 }

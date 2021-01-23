@@ -15,7 +15,7 @@ const Timer = () => {
 
   function reset() {
     setSeconds(duration);
-    setRunning(true);
+    setRunning(false);
   }
 
   function getProgress() {
@@ -66,7 +66,7 @@ const Timer = () => {
   return (
     <div className="countdown-container">
       <ProgressBar
-        radius={169}
+        radius={163}
         progress={getProgress()}
         initialAnimation={true}
         trackStrokeColor={'transparent'}
