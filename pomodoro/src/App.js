@@ -9,10 +9,32 @@ const App = () => {
   const [seconds, setSeconds] = useState(duration);
   const [running, setRunning] = useState(false);
   const [category, setCategory] = useState(1); // 1 = pomodoro, 2 = short break, 3 = long break
+  const [settings, setSettings] = useState({
+    time_pom: 25,
+    time_short: 5,
+    time_long: 15
+  });
 
   // Reset the timer to the start value
   function reset() {
     setSeconds(duration);
+    setRunning(false);
+  }
+
+  // Set the state and change the timer
+  function changeCategory(cat) {
+    if (cat === 1) {
+      setDuration(settings.time_pom * 60);
+      setSeconds(settings.time_pom * 60);
+    } else if (cat === 2) {
+      setDuration(settings.time_short * 60);
+      setSeconds(settings.time_short * 60);
+    } else if (cat === 3) {
+      setDuration(settings.time_long * 60);
+      setSeconds(settings.time_long * 60);
+    }
+    
+    setCategory(cat);
     setRunning(false);
   }
 
@@ -32,7 +54,10 @@ const App = () => {
 
   return (
     <div className="page">
-      <CategoryNav changeCategory={(cat) => setCategory(cat)} category={category} />
+      <CategoryNav
+        changeCategory={(cat) => changeCategory(cat)}
+        category={category}
+      />
       <Timer
         seconds={seconds}
         toggleRunning={() => setRunning(!running)}
