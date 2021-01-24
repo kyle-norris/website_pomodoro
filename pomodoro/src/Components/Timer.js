@@ -3,20 +3,6 @@ import ProgressBar from "react-customizable-progressbar";
 import "./Timer.scss";
 
 const Timer = ({seconds, running, toggleRunning, reset, duration}) => {
-  // Set States
-  // const [duration, setDuration] = useState(1500);
-  // const [seconds, setSeconds] = useState(duration);
-  // const [running, setRunning] = useState(false);
-
-  // // Timer Functions
-  // function toggleRunning() {
-  //   setRunning(!running);
-  // }
-
-  // function reset() {
-  //   setSeconds(duration);
-  //   setRunning(false);
-  // }
 
   // Calculate the percentage of progress for the circle progress bar
   function getProgress() {
@@ -52,19 +38,6 @@ const Timer = ({seconds, running, toggleRunning, reset, duration}) => {
     return s;
   }
 
-  // // Set interval to count down:
-  // useEffect(() => {
-  //   let interval = null;
-  //   if (isRunning && seconds > 0) {
-  //     interval = setInterval(() => {
-  //       setSeconds((seconds) => seconds - 1);
-  //     }, 1000);
-  //   } else {
-  //     setRunning(false);
-  //     clearInterval(interval);
-  //   }
-  //   return () => clearInterval(interval); // This is run when it is time to clean up
-  // }, [running, seconds]);
 
   return (
     <div className="countdown-container">

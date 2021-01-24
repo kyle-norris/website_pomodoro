@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <div className="page">
-      <CategoryNav />
+      <CategoryNav changeCategory={(cat) => setCategory(cat)} category={category} />
       <Timer
         seconds={seconds}
         toggleRunning={() => setRunning(!running)}
