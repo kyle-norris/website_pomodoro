@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.scss";
 import Timer from "./Components/Timer";
 import CategoryNav from "./Components/CategoryNav";
+import Logo from './logo.svg';
 
 const App = () => {
   // Define States
@@ -54,6 +55,7 @@ const App = () => {
 
   return (
     <div className="page">
+      <img src={Logo} alt="Pomodoro" className="logo"/>
       <CategoryNav
         changeCategory={(cat) => changeCategory(cat)}
         category={category}
@@ -65,7 +67,6 @@ const App = () => {
         reset={reset}
         duration={duration}
       />
-      {/* logo */}
       {/* Category Selection (pomodoro, short break, long break) */}
       {/* timer */}
       {/* settings button */}
