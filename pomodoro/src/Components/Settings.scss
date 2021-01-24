@@ -1,0 +1,68 @@
+.settings-container {
+  height: 464px;
+  width: 540px;
+  background: white;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  position: absolute;
+  top: 155px;
+
+  .header {
+    height: 93px;
+    border-bottom: #E3E1E1 1px solid;
+    display: flex;
+    flex-direction: row;
+
+    img {
+      height: auto;
+      margin: auto;
+      margin-right: 38px;
+      margin-top: 47px;
+      cursor: pointer;
+    }
+
+    h2 {
+      margin: auto;
+      color: #161932;
+      margin-left: 40px;
+      margin-top: 34px;
+    }
+  }
+
+  .time {
+    height: 157px;
+    border-bottom: #E3E1E1 1px solid;
+    width: 460px;
+    margin: auto;
+  }
+
+  .font {
+    height: 88px;
+    border-bottom: #E3E1E1 1px solid;
+    width: 460px;
+    margin: auto;
+  }
+
+  .color {
+    height: 123px;
+  }
+}
+
+.apply {
+  width: 140px;
+  height: 53px;
+  background: #F87070;
+  border-radius: 26.5px;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 592px;
+  z-index: 200;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}

@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./App.scss";
 import Timer from "./Components/Timer";
 import CategoryNav from "./Components/CategoryNav";
-import Logo from './logo.svg';
+import Settings from "./Components/Settings";
+import Logo from "./logo.svg";
+import GearIcon from "./icon-settings.svg";
 
 const App = () => {
   // Define States
@@ -13,8 +15,10 @@ const App = () => {
   const [settings, setSettings] = useState({
     time_pom: 25,
     time_short: 5,
-    time_long: 15
+    time_long: 15,
   });
+  const [showModal, setShowModal] = useState(false);
+
 
   // Reset the timer to the start value
   function reset() {
@@ -34,7 +38,7 @@ const App = () => {
       setDuration(settings.time_long * 60);
       setSeconds(settings.time_long * 60);
     }
-    
+
     setCategory(cat);
     setRunning(false);
   }
@@ -53,9 +57,14 @@ const App = () => {
     return () => clearInterval(interval); // This is run when it is time to clean up
   }, [running, seconds]);
 
+  // Show Modal
+  function toggleModal() {
+    setShowModal(!showModal);
+  }
+
   return (
     <div className="page">
-      <img src={Logo} alt="Pomodoro" className="logo"/>
+      <img src={Logo} alt="Pomodoro" className="logo" />
       <CategoryNav
         changeCategory={(cat) => changeCategory(cat)}
         category={category}
@@ -67,9 +76,8 @@ const App = () => {
         reset={reset}
         duration={duration}
       />
-      {/* Category Selection (pomodoro, short break, long break) */}
-      {/* timer */}
-      {/* settings button */}
+      <img src={GearIcon} alt="Settings" className="settings-icon" onClick={toggleModal}/>
+      {showModal && <Settings />}
     </div>
   );
 };
