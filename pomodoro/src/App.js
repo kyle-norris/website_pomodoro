@@ -19,7 +19,6 @@ const App = () => {
   });
   const [showModal, setShowModal] = useState(false);
 
-
   // Reset the timer to the start value
   function reset() {
     setSeconds(duration);
@@ -76,8 +75,13 @@ const App = () => {
         reset={reset}
         duration={duration}
       />
-      <img src={GearIcon} alt="Settings" className="settings-icon" onClick={toggleModal}/>
-      {showModal && <Settings />}
+      <img
+        src={GearIcon}
+        alt="Settings"
+        className="settings-icon"
+        onClick={toggleModal}
+      />
+      {showModal && <Settings toggleModal={toggleModal} />}
     </div>
   );
 };
