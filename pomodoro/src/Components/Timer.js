@@ -2,30 +2,33 @@ import React, { useState, useEffect } from "react";
 import ProgressBar from "react-customizable-progressbar";
 import "./Timer.scss";
 
-const Timer = () => {
+const Timer = ({seconds, running, toggleRunning, reset, duration}) => {
   // Set States
-  const [duration, setDuration] = useState(1500);
-  const [seconds, setSeconds] = useState(duration);
-  const [running, setRunning] = useState(false);
+  // const [duration, setDuration] = useState(1500);
+  // const [seconds, setSeconds] = useState(duration);
+  // const [running, setRunning] = useState(false);
 
-  // Timer Functions
-  function toggleRunning() {
-    setRunning(!running);
-  }
+  // // Timer Functions
+  // function toggleRunning() {
+  //   setRunning(!running);
+  // }
 
-  function reset() {
-    setSeconds(duration);
-    setRunning(false);
-  }
+  // function reset() {
+  //   setSeconds(duration);
+  //   setRunning(false);
+  // }
 
+  // Calculate the percentage of progress for the circle progress bar
   function getProgress() {
     let min = Number(getMinutes());
 
-    if (min < duration / 60) {
+    if (min < duration / 60 && seconds !== 0) {
       min++;
       let totalMin = Math.trunc(duration / 60);
       let percentage = (min / totalMin) * 100;
       return percentage;
+    } else if (seconds === 0) {
+      return 0;
     } else {
       return 100;
     }
@@ -49,19 +52,19 @@ const Timer = () => {
     return s;
   }
 
-  // Set interval to count down:
-  useEffect(() => {
-    let interval = null;
-    if (running && seconds > 0) {
-      interval = setInterval(() => {
-        setSeconds((seconds) => seconds - 1);
-      }, 1000);
-    } else {
-      setRunning(false);
-      clearInterval(interval);
-    }
-    return () => clearInterval(interval); // This is run when it is time to clean up
-  }, [running, seconds]);
+  // // Set interval to count down:
+  // useEffect(() => {
+  //   let interval = null;
+  //   if (isRunning && seconds > 0) {
+  //     interval = setInterval(() => {
+  //       setSeconds((seconds) => seconds - 1);
+  //     }, 1000);
+  //   } else {
+  //     setRunning(false);
+  //     clearInterval(interval);
+  //   }
+  //   return () => clearInterval(interval); // This is run when it is time to clean up
+  // }, [running, seconds]);
 
   return (
     <div className="countdown-container">
