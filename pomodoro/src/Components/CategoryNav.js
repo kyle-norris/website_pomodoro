@@ -15,9 +15,24 @@ const CategoryNav = ({ changeCategory, category }) => {
   return (
     <div className="category-container">
       <div className={`category-selector ${getCategoryName()}`}></div>
-      <p className={category === 1 && "selected"} onClick={() => changeCategory(1)}>pomodoro</p>
-      <p className={category === 2 && "selected"} onClick={() => changeCategory(2)}>short break</p>
-      <p className={category === 3 && "selected"} onClick={() => changeCategory(3)}>long break</p>
+      <p
+        className={category === 1 ? "selected" : undefined}
+        onClick={() => changeCategory(1)}
+      >
+        pomodoro
+      </p>
+      <p
+        className={category === 2 ? "selected" : undefined}
+        onClick={() => changeCategory(2)}
+      >
+        short break
+      </p>
+      <p
+        className={category === 3 ? "selected" : undefined}
+        onClick={() => changeCategory(3)}
+      >
+        long break
+      </p>
     </div>
   );
 };

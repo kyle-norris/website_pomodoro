@@ -1,3 +1,14 @@
+.settings-form {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 150;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
 .settings-container {
   height: 464px;
   width: 540px;
@@ -116,32 +127,32 @@
         border: none;
         margin-left: 16px;
         cursor: pointer;
+        background: #EFF1FA;
+        color: #1E213F;
+        opacity: 0.73;
+        font-size: 15px;
+        font-style: normal;
       }
 
       .font-1 {
-        background: #161932;
-        color: white;
+        font-family: 'Kumbh Sans';
         font-weight: bold;
-        font-size: 15px;
-        vertical-align: middle;
       }
 
       .font-2 {
-        color: #1E213F;
         font-family: 'Roboto Slab';
-        font-style: normal;
         font-weight: normal;
-        font-size: 15px;
-        opacity: 0.73;
       }
 
       .font-3 {
-        color: #1E213F;
         font-family: 'Space Mono';
-        font-style: normal;
         font-weight: bold;
-        font-size: 15px;
-        opacity: 0.73;
+      }
+
+      .font-selected {
+        background: #161932;
+        color: white;
+        opacity: 1;
       }
     }
   }

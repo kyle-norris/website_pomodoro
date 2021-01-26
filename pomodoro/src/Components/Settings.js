@@ -1,10 +1,30 @@
 import "./Settings.scss";
 import CloseIcon from "../icon-close.svg";
 import NumberSelector from "./NumberSelector";
+import { useState, useRef } from "react";
 
-const Settings = ({toggleModal}) => {
+const Settings = ({toggleModal, setSettings}) => {
+
+  const number_pom = useRef(25);
+  const number_short = useRef(5);
+  const number_long = useRef(15);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(number_pom.current.value);
+
+    var newSettings = {
+      time_pom: number_pom.current.value,
+      time_short: number_short.current.value,
+      time_long: number_long.current.value
+    }
+
+    setSettings(newSettings);
+  }
+  
+  
   return (
-    <>
+    <form className="settings-form">
       <div className="settings-container">
         <div className="header">
           <h2>Settings</h2>
@@ -15,14 +35,14 @@ const Settings = ({toggleModal}) => {
           <p className="pom">pomodoro</p>
           <p className="short">short break</p>
           <p className="long">long break</p>
-          <NumberSelector className="pom-num"/>
-          <NumberSelector className="short-num"/>
-          <NumberSelector className="long-num"/>
+          <NumberSelector className="pom-num" refValue={number_pom}/>
+          <NumberSelector className="short-num" refValue={number_short}/>
+          <NumberSelector className="long-num" refValue={number_long}/>
         </div>
         <div className="font">
           <h4>Font</h4>
           <div className="font-container">
-            <button className="font-1">Aa</button>
+            <button className="font-1 font-selected">Aa</button>
             <button className="font-2">Aa</button>
             <button className="font-3">Aa</button>
           </div>
@@ -36,8 +56,8 @@ const Settings = ({toggleModal}) => {
           </div>
         </div>
       </div>
-      <button className="apply">Apply</button>
-    </>
+      <button className="apply" type="submit" onClick={handleSubmit}>Apply</button>
+    </form>
   );
 };
 
