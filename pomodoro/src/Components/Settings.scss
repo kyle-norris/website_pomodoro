@@ -36,6 +36,58 @@
     border-bottom: #E3E1E1 1px solid;
     width: 460px;
     margin: auto;
+
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 41px 36px 80px;
+    grid-template-areas: 
+    "title title title"
+    "pom short long"
+    "num1 num2 num3";
+
+    h4 {
+      color: #161932; 
+      grid-area: title;
+      margin-bottom: 0;
+      margin-top: auto;
+    }
+
+    p {
+      color: #1E213F;
+      font-size: 12px;
+      font-weight: bold;
+      mix-blend-mode: normal;
+      opacity: 0.4;
+
+      margin-top: auto;
+      margin-bottom: 0;
+
+      &.pom {
+        grid-area: pom;
+      }
+
+      &.short {
+        grid-area: short;
+      }
+
+      &.long {
+        grid-area: long;
+      }
+    }
+
+
+
+    .pom-num {
+      grid-area: num1;
+    }
+
+    .short-num {
+      grid-area: num2;
+    }
+
+    .long-num {
+      grid-area: num3;
+    }
   }
 
   .font {
@@ -43,11 +95,104 @@
     border-bottom: #E3E1E1 1px solid;
     width: 460px;
     margin: auto;
+    display: flex;
+    flex-direction: row;
+
+    h4 {
+      color: #161932; 
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .font-container {
+      margin-left: auto;
+      margin-top: auto;
+      margin-bottom:auto;
+
+      button {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: none;
+        margin-left: 16px;
+        cursor: pointer;
+      }
+
+      .font-1 {
+        background: #161932;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        vertical-align: middle;
+      }
+
+      .font-2 {
+        color: #1E213F;
+        font-family: 'Roboto Slab';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        opacity: 0.73;
+      }
+
+      .font-3 {
+        color: #1E213F;
+        font-family: 'Space Mono';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        opacity: 0.73;
+      }
+    }
   }
 
   .color {
     height: 123px;
+    width: 460px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+
+    h4 {
+      color: #161932; 
+      margin-top: 40px;
+      margin-bottom: auto;
+    }
+
+    .color-container {
+      margin-left: auto;
+      margin-top: 24px;
+      margin-bottom:auto;
+
+      button {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: none;
+        margin-left: 16px;
+        cursor: pointer;
+        color: transparent;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .color-1 {
+        background: #F87070;
+      }
+
+      .color-2 {
+        background: #70F3F8;
+      }
+
+      .color-3 {
+        background: #D881F8;
+      }
+
+      .color-selected {
+        color: #161932;
+      }
+    }
   }
+
 }
 
 .apply {
