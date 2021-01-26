@@ -44,17 +44,17 @@ const Settings = ({toggleModal, setSettings, currentSettings}) => {
         <div className="font">
           <h4>Font</h4>
           <div className="font-container">
-            <button className="font-1 font-selected">Aa</button>
-            <button className="font-2">Aa</button>
-            <button className="font-3">Aa</button>
+            <button type="button" className="font-1 font-selected">Aa</button>
+            <button type="button" className="font-2">Aa</button>
+            <button type="button" className="font-3">Aa</button>
           </div>
         </div>
         <div className="color">
           <h4>Color</h4>
           <div className="color-container">
-            <button className="color-1 color-selected">&#10004;</button>
-            <button className="color-2">&#10004;</button>
-            <button className="color-3">&#10004;</button>
+            <button type="button" className="color-1 color-selected">&#10004;</button>
+            <button type="button" className="color-2">&#10004;</button>
+            <button type="button" className="color-3">&#10004;</button>
           </div>
         </div>
       </div>
