@@ -3,16 +3,18 @@ import CloseIcon from "../icon-close.svg";
 import NumberSelector from "./NumberSelector";
 import { useState, useRef } from "react";
 
-const Settings = ({toggleModal, setSettings}) => {
+const Settings = ({toggleModal, setSettings, currentSettings}) => {
 
   const number_pom = useRef(25);
   const number_short = useRef(5);
   const number_long = useRef(15);
 
+  // Functiont to handle Form submission
   const handleSubmit = e => {
     e.preventDefault();
     console.log(number_pom.current.value);
 
+    // Create the new settings object with the form's values:
     var newSettings = {
       time_pom: number_pom.current.value,
       time_short: number_short.current.value,
@@ -35,9 +37,9 @@ const Settings = ({toggleModal, setSettings}) => {
           <p className="pom">pomodoro</p>
           <p className="short">short break</p>
           <p className="long">long break</p>
-          <NumberSelector className="pom-num" refValue={number_pom}/>
-          <NumberSelector className="short-num" refValue={number_short}/>
-          <NumberSelector className="long-num" refValue={number_long}/>
+          <NumberSelector className="pom-num" refValue={number_pom} defaultValue={currentSettings.time_pom}/>
+          <NumberSelector className="short-num" refValue={number_short} defaultValue={currentSettings.time_short}/>
+          <NumberSelector className="long-num" refValue={number_long} defaultValue={currentSettings.time_long}/>
         </div>
         <div className="font">
           <h4>Font</h4>

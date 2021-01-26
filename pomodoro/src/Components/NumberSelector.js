@@ -1,11 +1,18 @@
-import './NumberSelector.scss';
+import "./NumberSelector.scss";
 
-const NumberSelector = ({ className, refValue }) => {
+const NumberSelector = ({ className, refValue, defaultValue }) => {
   return (
     <div className={`number-container ${className}`}>
-      <input type="number" placeholder="1" className="number-input" ref={refValue}/>
+      <input
+        type="number"
+        className="number-input"
+        ref={refValue}
+        defaultValue={defaultValue}
+        min="0"
+        max="99"
+      />
     </div>
-  )
-}
+  );
+};
 
-export default NumberSelector
+export default NumberSelector;

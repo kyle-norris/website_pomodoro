@@ -27,7 +27,7 @@ const App = () => {
 
   // Set the state and change the timer
   function changeCategory(cat) {
-    console.log('changing category...')
+    console.log("changing category...");
     if (cat === 1) {
       setDuration(settings.time_pom * 60);
       setSeconds(settings.time_pom * 60);
@@ -55,11 +55,11 @@ const App = () => {
       clearInterval(interval);
     }
     return () => clearInterval(interval); // This is run when it is time to clean up
-  }, [duration]);
+  }, [duration, running]);
 
   useEffect(() => {
     changeCategory(category);
-  }, [settings])
+  }, [settings]);
 
   // Show Modal
   function toggleModal() {
@@ -91,7 +91,13 @@ const App = () => {
         className="settings-icon"
         onClick={toggleModal}
       />
-      {showModal && <Settings toggleModal={toggleModal} setSettings={(newSettings)=> handleNewSettings(newSettings)}/>}
+      {showModal && (
+        <Settings
+          toggleModal={toggleModal}
+          setSettings={(newSettings) => handleNewSettings(newSettings)}
+          currentSettings={settings}
+        />
+      )}
     </div>
   );
 };
