@@ -32,7 +32,6 @@ const App = () => {
 
   // Set the state and change the timer
   function changeCategory(cat) {
-    console.log("changing category...");
     if (cat === 1) {
       setDuration(timeSettings.time_pom * 60);
       setSeconds(timeSettings.time_pom * 60);

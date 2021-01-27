@@ -22,7 +22,6 @@ const Settings = ({
   // Functiont to handle Form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(number_pom.current.value);
 
     // Create the new settings object with the form's values:
     var newTimeSettings = {
