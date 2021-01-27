@@ -2,8 +2,18 @@ import React, { useState, useEffect } from "react";
 import ProgressBar from "react-customizable-progressbar";
 import "./Timer.scss";
 
-const Timer = ({ seconds, running, toggleRunning, reset, duration, fontClass }) => {
-
+const Timer = ({
+  seconds,
+  running,
+  toggleRunning,
+  reset,
+  duration,
+  fontClass,
+  colorClass,
+}) => {
+  
+  var ColorCode = '#F87070';
+  
   // Calculate the percentage of progress for the circle progress bar
   function getProgress() {
     let min = Number(getMinutes());
@@ -38,6 +48,15 @@ const Timer = ({ seconds, running, toggleRunning, reset, duration, fontClass }) 
     return s;
   }
 
+  function getColor(className) {
+    if (className === "color-orange") {
+      return '#F87070';
+    } else if (className === "color-blue") {
+      return '#70F3F8';
+    } else if (className === "color-purple") {
+      return '#D881F8';
+    }
+  }
 
   return (
     <div className="countdown-container">
@@ -45,8 +64,8 @@ const Timer = ({ seconds, running, toggleRunning, reset, duration, fontClass }) 
         radius={163}
         progress={getProgress()}
         initialAnimation={true}
-        trackStrokeColor={'transparent'}
-        strokeColor={'#F87070'}
+        trackStrokeColor={"transparent"}
+        strokeColor={getColor(colorClass)}
         strokeWidth={11}
         className="progress-bar"
       >
@@ -59,7 +78,9 @@ const Timer = ({ seconds, running, toggleRunning, reset, duration, fontClass }) 
               {running ? "PAUSE" : "START"}
             </h3>
           ) : (
-            <h3 onClick={reset} className={fontClass}>RESTART</h3>
+            <h3 onClick={reset} className={fontClass}>
+              RESTART
+            </h3>
           )}
         </div>
       </ProgressBar>

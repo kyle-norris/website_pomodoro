@@ -3,9 +3,17 @@ import CloseIcon from "../icon-close.svg";
 import NumberSelector from "./NumberSelector";
 import { useState, useRef } from "react";
 
-
-const Settings = ({ toggleModal, setSettings, currentSettings, setFont, currentFont }) => {
+const Settings = ({
+  toggleModal,
+  setSettings,
+  currentSettings,
+  setFont,
+  currentFont,
+  currentColor,
+  setColor,
+}) => {
   const [fontSelection, setFontSelection] = useState(currentFont);
+  const [colorSelection, setColorSelection] = useState(currentColor);
 
   const number_pom = useRef(25);
   const number_short = useRef(5);
@@ -24,11 +32,10 @@ const Settings = ({ toggleModal, setSettings, currentSettings, setFont, currentF
     };
 
     setFont(fontSelection);
+    setColor(colorSelection);
 
     setSettings(newTimeSettings);
   };
-
-
 
   return (
     <form className="settings-form">
@@ -93,13 +100,31 @@ const Settings = ({ toggleModal, setSettings, currentSettings, setFont, currentF
         <div className="color">
           <h4>Color</h4>
           <div className="color-container">
-            <button type="button" className="color-1 color-selected">
+            <button
+              type="button"
+              className={
+                colorSelection === 1 ? `color-1 color-selected` : "color-1"
+              }
+              onClick={() => setColorSelection(1)}
+            >
               &#10004;
             </button>
-            <button type="button" className="color-2">
+            <button
+              type="button"
+              className={
+                colorSelection === 2 ? `color-2 color-selected` : "color-2"
+              }
+              onClick={() => setColorSelection(2)}
+            >
               &#10004;
             </button>
-            <button type="button" className="color-3">
+            <button
+              type="button"
+              className={
+                colorSelection === 3 ? `color-3 color-selected` : "color-3"
+              }
+              onClick={() => setColorSelection(3)}
+            >
               &#10004;
             </button>
           </div>

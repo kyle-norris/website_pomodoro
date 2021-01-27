@@ -52,9 +52,21 @@
     border-radius: 26.5px;
     width: 120px;
     height: 48px;
-    background: #F87070;
     position: absolute;
     transition: ease-in-out 0.2s;
+
+    &.color-orange {
+      background: #F87070;
+    }
+
+    &.color-blue {
+      background: #70F3F8;
+    }
+
+    &.color-purple {
+      background: #D881F8;
+    }
+
   }
 
   .pomodoro {

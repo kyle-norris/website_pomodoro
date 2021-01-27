@@ -7,6 +7,7 @@ import Logo from "./logo.svg";
 import GearIcon from "./icon-settings.svg";
 
 const fonts = {1: 'font-Kumbh', 2: 'font-Roboto', 3: 'font-Space'}; // Used by the fontSetting state. These are the classes added to relevant components
+const colors = {1: 'color-orange', 2: 'color-blue', 3: 'color-purple'}
 
 const App = () => {
   // Define States
@@ -19,7 +20,8 @@ const App = () => {
     time_short: 5,
     time_long: 15,
   });
-  const [fontSetting, setFontSettings] = useState(1);
+  const [fontSetting, setFontSetting] = useState(1);
+  const [colorSetting, setColorSetting] = useState(1);
   const [showModal, setShowModal] = useState(false);
 
   // Reset the timer to the start value
@@ -81,6 +83,7 @@ const App = () => {
         changeCategory={(cat) => changeCategory(cat)}
         category={category}
         fontClass={fonts[fontSetting]}
+        colorClass={colors[colorSetting]}
       />
       <Timer
         seconds={seconds}
@@ -89,6 +92,7 @@ const App = () => {
         reset={reset}
         duration={duration}
         fontClass={fonts[fontSetting]}
+        colorClass={colors[colorSetting]}
       />
       <img
         src={GearIcon}
@@ -101,8 +105,10 @@ const App = () => {
           toggleModal={toggleModal}
           setSettings={(newSettings) => handleNewSettings(newSettings)}
           currentSettings={timeSettings}
-          setFont={(newFont) => setFontSettings(newFont)}
+          setFont={(newFont) => setFontSetting(newFont)}
           currentFont={fontSetting}
+          currentColor={colorSetting}
+          setColor={(newColor) => setColorSetting(newColor)}
         />
       )}
     </div>
