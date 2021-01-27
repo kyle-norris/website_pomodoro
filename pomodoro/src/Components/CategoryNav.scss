@@ -19,31 +19,29 @@
     mix-blend-mode: normal;
     opacity: 0.4;
     z-index: 50;
-    height: 50px;
-    line-height: 50px;
+    height: 100%;
+    width: 120px;
     cursor: pointer;
+    line-height: 100%;
+    display: flex;
+    justify-content: center;
 
     &.selected {
       color: #1E213F;
       opacity: 1;
     }
 
-    &:nth-child(2) {
-      position: relative;
-      top: 2px;
-      left: -45px;
+    &.font-Kumbh {
+      font-family: 'Kumbh Sans';
+      line-height: 14px;
     }
 
-    &:nth-child(3) {
-      position: relative;
-      top: 2px;
-      left: 0px;
+    &.font-Roboto {
+      font-family: 'Roboto Slab';
     }
 
-    &:nth-child(4) {
-      position: relative;
-      top: 2px;
-      left: 50px;
+    &.font-Space {
+      font-family: 'Space Mono';
     }
 
   }

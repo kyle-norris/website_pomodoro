@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProgressBar from "react-customizable-progressbar";
 import "./Timer.scss";
 
-const Timer = ({seconds, running, toggleRunning, reset, duration}) => {
+const Timer = ({ seconds, running, toggleRunning, reset, duration, fontClass }) => {
 
   // Calculate the percentage of progress for the circle progress bar
   function getProgress() {
@@ -51,15 +51,15 @@ const Timer = ({seconds, running, toggleRunning, reset, duration}) => {
         className="progress-bar"
       >
         <div className="inside-bar" onDoubleClick={reset}>
-          <h1 className="remaining-time">
+          <h1 className={`remaining-time ${fontClass}`}>
             {getMinutes()}:{getSeconds()}
           </h1>
           {running || seconds > 0 ? (
-            <h3 onClick={toggleRunning}>
+            <h3 onClick={toggleRunning} className={fontClass}>
               {running ? "PAUSE" : "START"}
             </h3>
           ) : (
-            <h3 onClick={reset}>RESTART</h3>
+            <h3 onClick={reset} className={fontClass}>RESTART</h3>
           )}
         </div>
       </ProgressBar>

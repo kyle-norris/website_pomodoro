@@ -1,7 +1,7 @@
 import React from "react";
 import "./CategoryNav.scss";
 
-const CategoryNav = ({ changeCategory, category }) => {
+const CategoryNav = ({ changeCategory, category, fontClass }) => {
   function getCategoryName() {
     if (category === 1) {
       return "pomodoro";
@@ -16,19 +16,19 @@ const CategoryNav = ({ changeCategory, category }) => {
     <div className="category-container">
       <div className={`category-selector ${getCategoryName()}`}></div>
       <p
-        className={category === 1 ? "selected" : undefined}
+        className={category === 1 ? `selected ${fontClass}` : fontClass}
         onClick={() => changeCategory(1)}
       >
         pomodoro
       </p>
       <p
-        className={category === 2 ? "selected" : undefined}
+        className={category === 2 ? `selected ${fontClass}` : fontClass}
         onClick={() => changeCategory(2)}
       >
         short break
       </p>
       <p
-        className={category === 3 ? "selected" : undefined}
+        className={category === 3 ? `selected ${fontClass}` : fontClass}
         onClick={() => changeCategory(3)}
       >
         long break

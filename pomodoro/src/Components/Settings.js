@@ -15,13 +15,13 @@ const Settings = ({toggleModal, setSettings, currentSettings}) => {
     console.log(number_pom.current.value);
 
     // Create the new settings object with the form's values:
-    var newSettings = {
+    var newTimeSettings = {
       time_pom: number_pom.current.value,
       time_short: number_short.current.value,
       time_long: number_long.current.value
     }
 
-    setSettings(newSettings);
+    setSettings(newTimeSettings);
   }
   
   

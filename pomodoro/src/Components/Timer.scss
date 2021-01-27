@@ -31,6 +31,28 @@ $dark: #161932;
 
     .remaining-time {
       margin-top: 139px;
+      text-align:center;
+
+      &.font-Kumbh {
+        font-family: 'Kumbh Sans';
+        line-height: 101px;
+        letter-spacing: -5px;
+      }
+
+      &.font-Roboto {
+        font-family: 'Roboto Slab';
+        margin-top: 105px;
+        line-height: 132px;
+        letter-spacing: normal;
+      }
+
+      &.font-Space {
+        font-family: 'Space Mono';
+        line-height: 148px;
+        letter-spacing: -10px;
+        margin-top: 98px;
+        font-weight: normal;
+      }
     }
 
 
@@ -39,6 +61,24 @@ $dark: #161932;
       margin-top: 0px;
       height: 54px;
       line-height: 54px;
+
+      &.font-Kumbh {
+        font-family: 'Kumbh Sans';
+        line-height: 16px;
+        margin-top: 19px;
+      }
+
+      &.font-Roboto {
+        font-family: 'Roboto Slab';
+        line-height: 21px;
+        margin-top: 20px;
+      }
+
+      &.font-Space {
+        font-family: 'Space Mono';
+        line-height: 24px;
+        margin-top: 10px;
+      }
     }
   }
 }

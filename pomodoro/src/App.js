@@ -6,17 +6,20 @@ import Settings from "./Components/Settings";
 import Logo from "./logo.svg";
 import GearIcon from "./icon-settings.svg";
 
+const fonts = {1: 'font-Kumbh', 2: 'font-Roboto', 3: 'font-Space'}; // Used by the fontSetting state. These are the classes added to relevant components
+
 const App = () => {
   // Define States
   const [duration, setDuration] = useState(1500);
   const [seconds, setSeconds] = useState(duration);
   const [running, setRunning] = useState(false);
   const [category, setCategory] = useState(1); // 1 = pomodoro, 2 = short break, 3 = long break
-  const [settings, setSettings] = useState({
+  const [timeSettings, setTimeSettings] = useState({
     time_pom: 25,
     time_short: 5,
     time_long: 15,
   });
+  const [fontSetting, setFontSettings] = useState(1);
   const [showModal, setShowModal] = useState(false);
 
   // Reset the timer to the start value
@@ -29,14 +32,14 @@ const App = () => {
   function changeCategory(cat) {
     console.log("changing category...");
     if (cat === 1) {
-      setDuration(settings.time_pom * 60);
-      setSeconds(settings.time_pom * 60);
+      setDuration(timeSettings.time_pom * 60);
+      setSeconds(timeSettings.time_pom * 60);
     } else if (cat === 2) {
-      setDuration(settings.time_short * 60);
-      setSeconds(settings.time_short * 60);
+      setDuration(timeSettings.time_short * 60);
+      setSeconds(timeSettings.time_short * 60);
     } else if (cat === 3) {
-      setDuration(settings.time_long * 60);
-      setSeconds(settings.time_long * 60);
+      setDuration(timeSettings.time_long * 60);
+      setSeconds(timeSettings.time_long * 60);
     }
 
     setCategory(cat);
@@ -59,7 +62,7 @@ const App = () => {
 
   useEffect(() => {
     changeCategory(category);
-  }, [settings]);
+  }, [timeSettings]);
 
   // Show Modal
   function toggleModal() {
@@ -67,7 +70,7 @@ const App = () => {
   }
 
   function handleNewSettings(newSettings) {
-    setSettings(newSettings);
+    setTimeSettings(newSettings);
     toggleModal();
   }
 
@@ -77,6 +80,7 @@ const App = () => {
       <CategoryNav
         changeCategory={(cat) => changeCategory(cat)}
         category={category}
+        fontClass={fonts[fontSetting]}
       />
       <Timer
         seconds={seconds}
@@ -84,6 +88,7 @@ const App = () => {
         running={running}
         reset={reset}
         duration={duration}
+        fontClass={fonts[fontSetting]}
       />
       <img
         src={GearIcon}
@@ -95,7 +100,7 @@ const App = () => {
         <Settings
           toggleModal={toggleModal}
           setSettings={(newSettings) => handleNewSettings(newSettings)}
-          currentSettings={settings}
+          currentSettings={timeSettings}
         />
       )}
     </div>
