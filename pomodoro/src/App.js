@@ -101,6 +101,8 @@ const App = () => {
           toggleModal={toggleModal}
           setSettings={(newSettings) => handleNewSettings(newSettings)}
           currentSettings={timeSettings}
+          setFont={(newFont) => setFontSettings(newFont)}
+          currentFont={fontSetting}
         />
       )}
     </div>
