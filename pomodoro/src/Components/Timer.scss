@@ -59,7 +59,7 @@ $dark: #161932;
     h3 {
       cursor: pointer;
       margin-top: 0px;
-      height: 40px;
+      height: 20px;
       line-height: 54px;
       text-align: center;
 
@@ -97,6 +97,24 @@ $dark: #161932;
         margin-top: 95.9px;
         line-height: 80px;
         height: 80px;
+
+        &.font-Kumbh {
+          
+        }
+  
+        &.font-Roboto {
+          margin-top: 90px;
+          height: 80px;
+          line-height: 80px;
+        }
+  
+        &.font-Space {
+          height: 80px;
+          line-height: 80px;
+          margin-top: 95px;
+          width: 210px;
+          text-align: center;
+        }
       }
 
       h3 {

@@ -59,7 +59,7 @@ const App = () => {
       clearInterval(interval);
     }
     return () => clearInterval(interval); // This is run when it is time to clean up
-  }, [duration, running]);
+  }, [duration, running, seconds]);
 
   useEffect(() => {
     changeCategory(category);
