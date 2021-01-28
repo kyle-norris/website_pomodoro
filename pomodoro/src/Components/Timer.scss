@@ -59,8 +59,9 @@ $dark: #161932;
     h3 {
       cursor: pointer;
       margin-top: 0px;
-      height: 54px;
+      height: 40px;
       line-height: 54px;
+      text-align: center;
 
       &.font-Kumbh {
         font-family: 'Kumbh Sans';
@@ -85,3 +86,43 @@ $dark: #161932;
 
 
 
+@media only screen and (max-width: 475px) {
+  .countdown-container {
+    width: 300px;
+    height: 300px;
+
+    .inside-bar {
+      .remaining-time {
+        font-size: 80px;
+        margin-top: 95.9px;
+        line-height: 80px;
+        height: 80px;
+      }
+
+      h3 {
+        font-size: 14px;
+
+        &.font-Kumbh {
+          font-family: 'Kumbh Sans';
+          line-height: 14px;
+          margin-top: 14px;
+        }
+  
+        &.font-Roboto {
+          font-family: 'Roboto Slab';
+          line-height: 21px;
+          margin-top: 20px;
+        }
+  
+        &.font-Space {
+          font-family: 'Space Mono';
+          line-height: 24px;
+          margin-top: 10px;
+        }
+      }
+      
+    }
+
+    
+  }
+}

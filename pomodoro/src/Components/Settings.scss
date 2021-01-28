@@ -222,3 +222,104 @@
   font-weight: bold;
   font-size: 16px;
 }
+
+
+@media only screen and (max-width: 650px) {
+  .settings-container {
+    width: 327px;
+    height: auto;
+    top: 46px;
+
+    .header {
+      height: 72px;
+
+      h2 {
+        margin: auto;
+        font-size: 20px;
+        margin-top: 24px;
+        margin-left: 24px;
+        line-height: 20px;
+      }
+
+      img {
+        margin-right: 24px;
+        margin-top: 29px;
+      }
+    }
+
+    .time {
+      height: 213px;
+      width: 280px;
+
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 53px 48px 48px 64px;
+      grid-template-areas:
+      "title title"
+      "pom num1"
+      "short num2"
+      "long num3";
+
+      h4 {
+        font-size: 11px;
+        text-align: center;
+        margin-top: 24px;
+      }
+
+      p {
+        margin-bottom: auto;
+        margin-top: 21px;
+      }
+    }
+
+    .font {
+      height: 117px;
+      width: 327px;
+      flex-direction: column;
+
+      h4 {
+        text-align: center;
+        margin-bottom: 0;
+      }
+      
+      .font-container {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 18px;
+
+        button {
+          margin-left: 8px;
+          margin-right: 8px;
+        }
+      }
+
+    }
+
+    .color {
+      height: 144px;
+      width: 327px;
+      flex-direction: column;
+
+      h4 {
+        text-align: center;
+        margin-top: 16px;
+        margin-bottom: 0px;
+      }
+
+      .color-container {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+
+        button {
+          margin-left: 8px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  .apply {
+    top: 568px;
+  }
+}

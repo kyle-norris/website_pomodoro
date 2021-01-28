@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProgressBar from "react-customizable-progressbar";
 import "./Timer.scss";
+import useWindowSize from "../Hooks/Hooks";
 
 const Timer = ({
   seconds,
@@ -11,9 +12,10 @@ const Timer = ({
   fontClass,
   colorClass,
 }) => {
-  
-  var ColorCode = '#F87070';
-  
+  var ColorCode = "#F87070";
+  const size = useWindowSize();
+  const breakpoint = 475;
+
   // Calculate the percentage of progress for the circle progress bar
   function getProgress() {
     let min = Number(getMinutes());
@@ -50,23 +52,23 @@ const Timer = ({
 
   function getColor(className) {
     if (className === "color-orange") {
-      return '#F87070';
+      return "#F87070";
     } else if (className === "color-blue") {
-      return '#70F3F8';
+      return "#70F3F8";
     } else if (className === "color-purple") {
-      return '#D881F8';
+      return "#D881F8";
     }
   }
 
   return (
     <div className="countdown-container">
       <ProgressBar
-        radius={163}
+        radius={size.width > breakpoint ? 163 : 118}
         progress={getProgress()}
         initialAnimation={true}
         trackStrokeColor={"transparent"}
         strokeColor={getColor(colorClass)}
-        strokeWidth={11}
+        strokeWidth={size.width > breakpoint ? 11 : 10}
         className="progress-bar"
       >
         <div className="inside-bar" onDoubleClick={reset}>

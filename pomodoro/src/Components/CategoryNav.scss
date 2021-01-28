@@ -77,3 +77,28 @@
     transform: translate(119px);
   }
 }
+
+@media only screen and (max-width: 650px) {
+  
+  .category-container {
+    width: 327px;
+
+    p {
+      font-size: 12px;
+      width: 105px;
+    }
+
+    .category-selector {
+      width: 106px;
+    }
+
+    .pomodoro {
+      transform: translate(-104px);
+    }
+  
+    .long-break {
+      transform: translate(104px);
+    }
+  }
+  
+}
