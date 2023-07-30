@@ -1,4 +1,5 @@
 import "./NumberSelector.scss";
+import PropTypes from "prop-types";
 
 const NumberSelector = ({ className, refValue, defaultValue }) => {
   return (
@@ -16,3 +17,9 @@ const NumberSelector = ({ className, refValue, defaultValue }) => {
 };
 
 export default NumberSelector;
+
+NumberSelector.propTypes = {
+  className: PropTypes.string,
+  refValue: PropTypes.object,
+  defaultValue: PropTypes.number,
+};

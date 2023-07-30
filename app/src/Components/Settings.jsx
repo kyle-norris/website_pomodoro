@@ -1,7 +1,8 @@
 import "./Settings.scss";
-import CloseIcon from "../icon-close.svg";
+import CloseIcon from "../assets/icon-close.svg";
 import NumberSelector from "./NumberSelector";
 import { useState, useRef } from "react";
+import PropTypes from "prop-types";
 
 const Settings = ({
   toggleModal,
@@ -15,9 +16,9 @@ const Settings = ({
   const [fontSelection, setFontSelection] = useState(currentFont);
   const [colorSelection, setColorSelection] = useState(currentColor);
 
-  const number_pom = useRef(25);
-  const number_short = useRef(5);
-  const number_long = useRef(15);
+  const number_pom = useRef();
+  const number_short = useRef();
+  const number_long = useRef();
 
   // Functiont to handle Form submission
   const handleSubmit = (e) => {
@@ -25,14 +26,13 @@ const Settings = ({
 
     // Create the new settings object with the form's values:
     var newTimeSettings = {
-      time_pom: number_pom.current.value,
-      time_short: number_short.current.value,
-      time_long: number_long.current.value,
+      time_pom: Number(number_pom.current.value),
+      time_short: Number(number_short.current.value),
+      time_long: Number(number_long.current.value),
     };
 
     setFont(fontSelection);
     setColor(colorSelection);
-
     setSettings(newTimeSettings);
   };
 
@@ -137,3 +137,13 @@ const Settings = ({
 };
 
 export default Settings;
+
+Settings.propTypes = {
+  toggleModal: PropTypes.func,
+  setSettings: PropTypes.func,
+  currentSettings: PropTypes.object,
+  setFont: PropTypes.func,
+  currentFont: PropTypes.number,
+  currentColor: PropTypes.number,
+  setColor: PropTypes.func,
+};

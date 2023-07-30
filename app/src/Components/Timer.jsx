@@ -1,6 +1,7 @@
 import ProgressBar from "react-customizable-progressbar";
 import "./Timer.scss";
 import useWindowSize from "../Hooks/Hooks";
+import PropTypes from "prop-types";
 
 const Timer = ({
   seconds,
@@ -78,3 +79,13 @@ const Timer = ({
 };
 
 export default Timer;
+
+Timer.propTypes = {
+  seconds: PropTypes.number,
+  running: PropTypes.bool,
+  toggleRunning: PropTypes.func,
+  reset: PropTypes.func,
+  duration: PropTypes.number,
+  fontClass: PropTypes.string,
+  colorClass: PropTypes.string,
+};

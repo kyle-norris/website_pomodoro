@@ -1,5 +1,5 @@
-import React from "react";
 import "./CategoryNav.scss";
+import PropTypes from "prop-types";
 
 const CategoryNav = ({ changeCategory, category, fontClass, colorClass }) => {
   function getCategoryName() {
@@ -14,7 +14,9 @@ const CategoryNav = ({ changeCategory, category, fontClass, colorClass }) => {
 
   return (
     <div className="category-container">
-      <div className={`category-selector ${getCategoryName()} ${colorClass}`}></div>
+      <div
+        className={`category-selector ${getCategoryName()} ${colorClass}`}
+      ></div>
       <p
         className={category === 1 ? `selected ${fontClass}` : fontClass}
         onClick={() => changeCategory(1)}
@@ -38,3 +40,10 @@ const CategoryNav = ({ changeCategory, category, fontClass, colorClass }) => {
 };
 
 export default CategoryNav;
+
+CategoryNav.propTypes = {
+  changeCategory: PropTypes.func,
+  category: PropTypes.number,
+  fontClass: PropTypes.string,
+  colorClass: PropTypes.string,
+};

@@ -14,7 +14,7 @@
     font-size: 14px;
     font-weight: bold;
     font-style: normal;
-    color: #D7E0FF;
+    color: #d7e0ff;
     align-items: center;
     mix-blend-mode: normal;
     opacity: 0.4;
@@ -27,25 +27,23 @@
     justify-content: center;
 
     &.selected {
-      color: #1E213F;
+      color: #1e213f;
       opacity: 1;
     }
 
     &.font-Kumbh {
-      font-family: 'Kumbh Sans';
+      font-family: "Kumbh Sans";
       line-height: 14px;
     }
 
     &.font-Roboto {
-      font-family: 'Roboto Slab';
+      font-family: "Roboto Slab";
     }
 
     &.font-Space {
-      font-family: 'Space Mono';
+      font-family: "Space Mono";
     }
-
   }
-
 
   .category-selector {
     z-index: 40;
@@ -56,17 +54,16 @@
     transition: ease-in-out 0.2s;
 
     &.color-orange {
-      background: #F87070;
+      background: #f87070;
     }
 
     &.color-blue {
-      background: #70F3F8;
+      background: #70f3f8;
     }
 
     &.color-purple {
-      background: #D881F8;
+      background: #d881f8;
     }
-
   }
 
   .pomodoro {
@@ -79,7 +76,6 @@
 }
 
 @media only screen and (max-width: 650px) {
-  
   .category-container {
     width: 327px;
 
@@ -95,10 +91,9 @@
     .pomodoro {
       transform: translate(-104px);
     }
-  
+
     .long-break {
       transform: translate(104px);
     }
   }
-  
 }

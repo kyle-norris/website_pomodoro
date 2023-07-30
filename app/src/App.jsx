@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
 import Timer from "./Components/Timer";
 import CategoryNav from "./Components/CategoryNav";
 import Settings from "./Components/Settings";
-import Logo from "./logo.svg";
-import GearIcon from "./icon-settings.svg";
+import Logo from "./assets/logo.svg";
+import GearIcon from "./assets/icon-settings.svg";
 
 const fonts = { 1: "font-Kumbh", 2: "font-Roboto", 3: "font-Space" }; // Used by the fontSetting state. These are the classes added to relevant components
 const colors = { 1: "color-orange", 2: "color-blue", 3: "color-purple" };
