@@ -6,8 +6,8 @@ import Settings from "./Components/Settings";
 import Logo from "./logo.svg";
 import GearIcon from "./icon-settings.svg";
 
-const fonts = {1: 'font-Kumbh', 2: 'font-Roboto', 3: 'font-Space'}; // Used by the fontSetting state. These are the classes added to relevant components
-const colors = {1: 'color-orange', 2: 'color-blue', 3: 'color-purple'}
+const fonts = { 1: "font-Kumbh", 2: "font-Roboto", 3: "font-Space" }; // Used by the fontSetting state. These are the classes added to relevant components
+const colors = { 1: "color-orange", 2: "color-blue", 3: "color-purple" };
 
 const App = () => {
   // Define States
@@ -47,6 +47,21 @@ const App = () => {
     setRunning(false);
   }
 
+  useEffect(() => {
+    if (category === 1) {
+      setDuration(timeSettings.time_pom * 60);
+      setSeconds(timeSettings.time_pom * 60);
+    } else if (category === 2) {
+      setDuration(timeSettings.time_short * 60);
+      setSeconds(timeSettings.time_short * 60);
+    } else if (category === 3) {
+      setDuration(timeSettings.time_long * 60);
+      setSeconds(timeSettings.time_long * 60);
+    }
+
+    setRunning(false);
+  }, [category, timeSettings]);
+
   // Count down the timer:
   useEffect(() => {
     let interval = null;
@@ -60,10 +75,6 @@ const App = () => {
     }
     return () => clearInterval(interval); // This is run when it is time to clean up
   }, [duration, running, seconds]);
-
-  useEffect(() => {
-    changeCategory(category);
-  }, [timeSettings]);
 
   // Show Modal
   function toggleModal() {
