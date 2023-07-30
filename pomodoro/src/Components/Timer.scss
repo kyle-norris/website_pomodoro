@@ -1,14 +1,14 @@
-$orange: #F87070;
+$orange: #f87070;
 $dark: #161932;
 
 .countdown-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 410px;
-  height: 410px;
-  background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
-  box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+  box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
   border-radius: 50%;
 
   .progress-bar {
@@ -23,124 +23,73 @@ $dark: #161932;
     display: flex;
     flex-direction: column;
     align-items: center;
-    // justify-content: center;
+    justify-content: center;
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
+    line-height: 130px;
 
     .remaining-time {
-      margin-top: 139px;
-      text-align:center;
+      text-align: center;
+      font-size: 80px;
+      width: 100%;
 
       &.font-Kumbh {
-        font-family: 'Kumbh Sans';
-        line-height: 101px;
-        letter-spacing: -5px;
+        font-family: "Kumbh Sans";
+        letter-spacing: -4px;
       }
 
       &.font-Roboto {
-        font-family: 'Roboto Slab';
-        margin-top: 105px;
-        line-height: 132px;
+        font-family: "Roboto Slab";
         letter-spacing: normal;
       }
 
       &.font-Space {
-        font-family: 'Space Mono';
-        line-height: 148px;
+        font-family: "Space Mono";
         letter-spacing: -10px;
-        margin-top: 98px;
         font-weight: normal;
       }
     }
 
-
     h3 {
       cursor: pointer;
-      margin-top: 0px;
-      height: 20px;
-      line-height: 54px;
+      line-height: 21px;
+      font-size: 14px;
       text-align: center;
+      letter-spacing: 13.13px;
+      width: 100%;
 
       &.font-Kumbh {
-        font-family: 'Kumbh Sans';
-        line-height: 16px;
-        margin-top: 19px;
+        font-family: "Kumbh Sans";
       }
 
       &.font-Roboto {
-        font-family: 'Roboto Slab';
-        line-height: 21px;
-        margin-top: 20px;
+        font-family: "Roboto Slab";
       }
 
       &.font-Space {
-        font-family: 'Space Mono';
-        line-height: 24px;
-        margin-top: 10px;
+        font-family: "Space Mono";
       }
     }
   }
 }
 
-
-
-@media only screen and (max-width: 475px) {
+@media only screen and (min-width: 475px) {
   .countdown-container {
-    width: 300px;
-    height: 300px;
+    width: 410px;
+    height: 410px;
 
     .inside-bar {
       .remaining-time {
-        font-size: 80px;
-        margin-top: 95.9px;
-        line-height: 80px;
-        height: 80px;
-
-        &.font-Kumbh {
-          
-        }
-  
-        &.font-Roboto {
-          margin-top: 90px;
-          height: 80px;
-          line-height: 80px;
-        }
-  
-        &.font-Space {
-          height: 80px;
-          line-height: 80px;
-          margin-top: 95px;
-          width: 210px;
-          text-align: center;
-        }
+        font-size: 100px;
+        line-height: 132px;
       }
 
       h3 {
-        font-size: 14px;
-
-        &.font-Kumbh {
-          font-family: 'Kumbh Sans';
-          line-height: 14px;
-          margin-top: 14px;
-        }
-  
-        &.font-Roboto {
-          font-family: 'Roboto Slab';
-          line-height: 21px;
-          margin-top: 20px;
-        }
-  
-        &.font-Space {
-          font-family: 'Space Mono';
-          line-height: 24px;
-          margin-top: 10px;
-        }
+        font-size: 16px;
+        line-height: 21px;
       }
-      
     }
-
-    
   }
 }

@@ -1,48 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-$lightblue: #D7E0FF;
-$darkblue: #1E213F;
+$lightblue: #d7e0ff;
+$darkblue: #1e213f;
 
 * {
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   margin: 0;
 }
 
 h1 {
-  font-weight: bold;
-  font-style: normal;
-  font-size: 100px;
-  line-height: 101px;
-  letter-spacing: -5px;
-  color: $lightblue;
-}
-
-h2 {
-  font-weight: bold;
-  font-style: normal;
-  font-size: 28px;
-  line-height: 34px;
   color: $lightblue;
 }
 
 h3 {
-  font-weight: bold;
-  font-style: normal;
-  font-size: 16px;
-  line-height: 16px;
-  letter-spacing: 15px;
-  color: $lightblue;
-  text-transform: uppercase;
-}
-
-h4 {
-  font-weight: bold;
-  font-style: normal;
-  font-size: 13px;
-  line-height: 16px;
-  letter-spacing: 5px;
   color: $lightblue;
   text-transform: uppercase;
 }
@@ -50,7 +22,9 @@ h4 {
 .page {
   background: $darkblue;
   height: 100vh;
+  min-height: 900px;
   width: 100vw;
+  min-width: 400px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -67,8 +41,12 @@ h4 {
 }
 
 @media only screen and (max-width: 650px) {
-  .logo {
-    margin-top: 32px;
-    margin-bottom: 45px;
+  .page {
+    min-height: 700px;
+
+    .logo {
+      margin-top: 32px;
+      margin-bottom: 45px;
+    }
   }
 }

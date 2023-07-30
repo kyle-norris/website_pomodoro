@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import ProgressBar from "react-customizable-progressbar";
 import "./Timer.scss";
 import useWindowSize from "../Hooks/Hooks";
@@ -12,24 +11,12 @@ const Timer = ({
   fontClass,
   colorClass,
 }) => {
-  var ColorCode = "#F87070";
   const size = useWindowSize();
   const breakpoint = 475;
 
   // Calculate the percentage of progress for the circle progress bar
   function getProgress() {
-    let min = Number(getMinutes());
-
-    if (min < duration / 60 && seconds !== 0) {
-      min++;
-      let totalMin = Math.trunc(duration / 60);
-      let percentage = (min / totalMin) * 100;
-      return percentage;
-    } else if (seconds === 0) {
-      return 0;
-    } else {
-      return 100;
-    }
+    return (seconds / duration) * 100;
   }
 
   // Format minutes to 2 digits:
